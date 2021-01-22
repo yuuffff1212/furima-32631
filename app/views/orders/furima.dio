@@ -1,6 +1,6 @@
-<mxfile host="65bd71144e" modified="2021-01-22T08:59:34.790Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" etag="EBsjZA8o3Q50jV92VX5k" version="13.10.0" type="embed">
+<mxfile host="65bd71144e" modified="2021-01-22T09:38:27.174Z" agent="5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36" version="13.10.0" etag="YX9LJU0_lHMZ5K17n6H9" type="embed">
     <diagram id="GcNY1iAnVAGguJAcu2VM" name="ページ1">
-        <mxGraphModel dx="1556" dy="618" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1930" dy="618" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -21,7 +21,7 @@
                         <mxPoint x="-360" y="135" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="408" value="donation(住所管理）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                <mxCell id="408" value="address(住所管理）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry y="45" width="230" height="170" as="geometry"/>
                 </mxCell>
                 <mxCell id="409" value="postal_code              string;not null&#10;shipping_region_id   string:not null&#10;city                            string:not null&#10;house_number          string:not null&#10;building_number       string:not null&#10;tell                             string:not null&#10;customer_id" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="408" vertex="1">

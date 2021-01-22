@@ -29,9 +29,9 @@
 
 - belongs_to :user
 - belongs_to :item
-- has_one   :donation
+- has_one   :address
 
-## donations テーブル
+## addresses テーブル
 
 | Column             | Type       | Options           |
 | ------------------ | ---------- | ------------------|
