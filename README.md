@@ -16,14 +16,14 @@
 ### Association
 
 - has_many  :items
-- has_one   :customer
+- has_many   :customer
 
 ## customer テーブル
 
-| Column   | Type       | Options     |
-| -------- | ---------- | ------------|
-| item_id  | references | foreign_key |
-| user_id  | references | foreign_key |
+| Column   | Type       | Options           |
+| -------- | ---------- | ------------------|
+| item     | references | foreign_key: true |
+| user     | references | foreign_key: true |
 
 ### Association
 
@@ -33,15 +33,15 @@
 
 ## donation テーブル
 
-| Column          | Type       | Options     |
-| --------------- | ---------- | ------------|
-| postal_code      | string     | null: false |
-| prefecture      | string     | null: false |
-| city            | string     | null: false |
-| house_number    | string     | null: false |
-| building_number | string     |             |
-| tell            | integer    | null: false |
-| customer_id     | references | foreign_key |
+| Column          | Type       | Options           |
+| --------------- | ---------- | ------------------|
+| postal_code     | string     | null: false       |
+| prefecture      | string     | null: false       |
+| city            | string     | null: false       |
+| house_number    | string     | null: false       |
+| building_number | string     |                   |
+| tell            | string     | null: false       |
+| customer        | references | foreign_key: true |
 
 ### Association
 
@@ -49,17 +49,17 @@
 
 ## item テーブル
 
-| Column          | Type       | Options     |
-| --------------- | ---------- | ------------|
-| name            | string     | null: false |
-| text            | text       | null: false |
-| price           | integer    | null: false |
-| item_category   | string     | null: false |
-| item_state      | string     | null: false |
-| shipping_cost   | integer    | null: false |
-| shipping_region | string     | null: false |
-| shipping_date   | date       | null: false |
-| user            | references | foreign_key |
+| Column          | Type       | Options           |
+| --------------- | ---------- | ------------------|
+| name            | string     | null: false       |
+| text            | text       | null: false       |
+| price           | integer    | null: false       |
+| item_category   | integer    | null: false       |
+| item_state      | integer    | null: false       |
+| shipping_cost   | integer    | null: false       |
+| shipping_region | integer    | null: false       |
+| shipping_date   | integer    | null: false       |
+| user            | references | foreign_key: true |
 
 ## Association
 
