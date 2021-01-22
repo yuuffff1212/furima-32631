@@ -18,7 +18,7 @@
 - has_many  :items
 - has_many   :customers
 
-## customer テーブル
+## customers テーブル
 
 | Column   | Type       | Options           |
 | -------- | ---------- | ------------------|
@@ -31,7 +31,7 @@
 - belongs_to :item
 - has_one   :donation
 
-## donation テーブル
+## donations テーブル
 
 | Column             | Type       | Options           |
 | ------------------ | ---------- | ------------------|
@@ -47,7 +47,7 @@
 
 - belongs_to :customer
 
-## item テーブル
+## items テーブル
 
 | Column             | Type       | Options           |
 | ------------------ | ---------- | ------------------|
