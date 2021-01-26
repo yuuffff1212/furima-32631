@@ -6,6 +6,10 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ユーザー新規登録' do
+
+    it 'すべての値が正しく入力されていれば保存できること' do
+      expect(@user).to be_valid
+    end
     it 'nicknameが空だと保存できないこと' do
       @user.nickname = nil
       @user.valid?
@@ -23,24 +27,35 @@ RSpec.describe User, type: :model do
       expect(another_user.errors.full_messages).to include("Email has already been taken")
     end
     it 'emailに@がないと保存できないこと'do
-      @user.email = "test00"
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Email is invalid")
+    @user.email = "test00"
+    @user.valid?
+    expect(@user.errors.full_messages).to include("Email is invalid")
     end
     it 'passwordが空でpassword_confirmationの値が同じでないと保存できないこと' do
-      @user.password = nil
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Password can't be blank", "Password confirmation doesn't match Password")
+    @user.password = ''
+    @user.valid?
+    expect(@user.errors.full_messages).to include("Password can't be blank", "Password confirmation doesn't match Password")
     end
     it 'passwordが6文字以内だと保存できないこと'do
-      @user.password = "11111"
-      @user.valid?
-      expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+    @user.password = "11111"
+    @user.valid?
+    expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
     end
     it 'passwordは半角英数字混合でないと保存できないこと' do
-      @user.password = "111111"
+    @user.password = "111111"
+    @user.valid?
+    expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password", "Password is invalid. Include both letters and numbers. Input half-width characters.")
+    end
+    it 'passwordはすべて英字では保存できないこと' do
+    @user.password = 'aaaaaa'
+    @user.valid?
+    expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password", "Password is invalid. Include both letters and numbers. Input half-width characters.")
+    end
+    it 'passwordは全角では保存できないこと' do
+      @user.password = 'ＡＡＡＡＡ1'
       @user.valid?
-      expect(@user.errors.full_messages).to include("Password is invalid. Include both letters and numbers.")
+      # binding.pry
+      expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password", "Password is invalid. Include both letters and numbers. Input half-width characters.")
     end
     it 'last_nameが空だと保存できないこと' do
       @user.last_name = nil
@@ -53,9 +68,9 @@ RSpec.describe User, type: :model do
       expect(@user.errors.full_messages).to include("First name can't be blank")
     end
     it 'last_nameが全角日本語でないと保存できないこと' do
-      @user.last_name = nil
+      @user.last_name = "hayasi"
       @user.valid?
-      expect(@user.errors.full_messages).to include("Last name can't be blank")
+      expect(@user.errors.full_messages).to include("Last name is invalid. Input full-width characters.")
     end
     it 'first_nameが全角日本語でないと保存できないこと' do
       @user.first_name = "tarou"
