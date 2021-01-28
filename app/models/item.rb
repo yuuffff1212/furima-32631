@@ -11,7 +11,7 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :text
-    validates :price, numericality: { message: " is invalid. Input half-width alphanumeric characters."}
+    validates :price, numericality: { only_integer: true, message: " is invalid. Input half-width alphanumeric characters." }
     validates :shipping_region_id 
     validates :shipping_date_id
     validates :shipping_cost_id
@@ -19,6 +19,7 @@ class Item < ApplicationRecord
     validates :item_category_id
     validates :image
   end
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 999999, message: "is out of setting range" }
 
   validates :shipping_region_id, numericality: { other_than: 0 } 
   with_options numericality: { other_than: 1 } do
