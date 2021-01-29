@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_many :items
 
   name_zenkaku_nihongo =  /\A[ぁ-んァ-ン一-龥々]/
   name_zenkaku_kana = /\A[ァ-ヶー－]+\z/
