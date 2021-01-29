@@ -33,13 +33,23 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Price  is invalid. Input half-width alphanumeric characters.")
       end
+      it 'priceが半角英数混合では保存できないこと' do
+        @item.price= "1a"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price  is invalid. Input half-width alphanumeric characters.")
+      end
+      it 'priceが半角英語だと保存できないこと' do
+        @item.price = "aaaa"
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Price  is invalid. Input half-width alphanumeric characters.")
+      end
       it 'priceが300円未満だと保存できないこと' do
         @item.price = 299
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is out of setting range")
       end
-      it 'priceが9,999,999円以上だと保存できないこと' do
-        @item.price = 1000000
+      it 'priceが9999999円以上だと保存できないこと' do
+        @item.price = 10000000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price is out of setting range")
       end
@@ -58,40 +68,40 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping date can't be blank", "Shipping date is not a number")
       end
-      it 'shipping_date_idの値が1以外でないと保存できないこと' do
-        @item.shipping_date_id = 1
+      it 'shipping_date_idの値が0以外でないと保存できないこと' do
+        @item.shipping_date_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping date must be other than 1")
+        expect(@item.errors.full_messages).to include("Shipping date must be other than 0")
       end
       it 'shipping_cost_idが空だと保存できないこと' do
         @item.shipping_cost_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping cost can't be blank", "Shipping cost is not a number")
       end
-      it 'shippng_cost_idの値が1以外でないと保存できないこと' do
-        @item.shipping_cost_id = 1
+      it 'shippng_cost_idの値が0以外でないと保存できないこと' do
+        @item.shipping_cost_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping cost must be other than 1")
+        expect(@item.errors.full_messages).to include("Shipping cost must be other than 0")
       end
       it 'item_category_idが空だと保存できないこと' do
         @item.item_category_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Item category can't be blank", "Item category is not a number")
       end
-      it 'item_category_idの値が1だと保存できないこと' do
-        @item.item_category_id = 1
+      it 'item_category_idの値が0だと保存できないこと' do
+        @item.item_category_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item category must be other than 1")
+        expect(@item.errors.full_messages).to include("Item category must be other than 0")
       end
       it 'item_state_idが空だと保存できないこと' do
         @item.item_state_id = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Item state can't be blank", "Item state is not a number")
       end
-      it 'item_state_idの値が1だと保存できないこと' do
-        @item.item_state_id = 1
+      it 'item_state_idの値が0だと保存できないこと' do
+        @item.item_state_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Item state must be other than 1")
+        expect(@item.errors.full_messages).to include("Item state must be other than 0")
       end
       it 'imageが空だと保存できないこと' do
         @item.image = nil
