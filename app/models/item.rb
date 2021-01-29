@@ -19,13 +19,13 @@ class Item < ApplicationRecord
     validates :item_category_id
     validates :image
   end
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 999999, message: "is out of setting range" }
-
-  validates :shipping_region_id, numericality: { other_than: 0 } 
-  with_options numericality: { other_than: 1 } do
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range" }
+  
+  with_options numericality: { other_than: 0 } do
     validates :shipping_date_id
     validates :shipping_cost_id
     validates :item_category_id
     validates :item_state_id
+    validates :shipping_region_id
   end
 end
