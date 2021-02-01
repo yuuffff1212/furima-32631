@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :items
+  has_many :customers
 
   name_zenkaku_nihongo =  /\A[ぁ-んァ-ン一-龥々]/
   name_zenkaku_kana = /\A[ァ-ヶー－]+\z/
