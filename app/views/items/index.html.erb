@@ -133,9 +133,11 @@
           <%= image_tag item.image, class: "item-img" if item.image.attached?%>
 
           <%# 商品が売れていればsold outを表示しましょう %>
+          <% if item.customer.present?%>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
+          <% end %>
           <%# //商品が売れていればsold outを表示しましょう %>
 
         </div>
@@ -155,7 +157,7 @@
       </li>
       <% end %>
 
-      <% unless @items.present? %>
+      <% if @items.present? %>
       <li class='list'>
         <%= link_to '#' do %>
         <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
