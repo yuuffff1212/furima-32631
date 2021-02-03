@@ -1,9 +1,9 @@
 class CustomersController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_params, only:[:index, :create]
 
   def index
     @user_customer = UserCustomer.new
-    @item = Item.find(params[:item_id])
     if current_user.id == @item.user.id || @item.customer != nil
       redirect_to root_path
     end
@@ -11,7 +11,6 @@ class CustomersController < ApplicationController
 
   def create
     @user_customer = UserCustomer.new(customer_params)
-    @item = Item.find(params[:item_id])
     if @user_customer.valid?
       pay_item
       @user_customer.save
@@ -25,6 +24,10 @@ class CustomersController < ApplicationController
   
   def customer_params
     params.require(:user_customer).permit(:postal_code, :shipping_region_id, :city, :house_number, :building_number, :tell, :customer).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
+  end
+
+  def set_params
+    @item = Item.find(params[:item_id])
   end
 
   def pay_item
