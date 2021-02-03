@@ -10,9 +10,8 @@ class UserCustomer
     validates :tell, length: { maximum: 11 }
     validates :user_id
     validates :item_id
-    #validates :token
+    validates :token
   end
-  #validates :tell, length: { maximum: 11 }
   validates :tell, numericality: {message: "Input only number"}
 
   def save
