@@ -2,12 +2,18 @@ require 'rails_helper'
 
 RSpec.describe UserCustomer, type: :model do
   before do 
-    @user_customer = FactoryBot.build(:user_customer)
+    @user = FactoryBot.create(:user)
+    @item = FactoryBot.create(:item)
+    @user_customer = FactoryBot.build(:user_customer, user_id: @user.id, item_id: @item.id)
+    sleep 0.1 # 0.1秒待機
   end
 
   describe '住所登録機能' do
     context '住所が登録できるとき' do
       it 'すべての値が正しく入力できれば保存できる' do
+        expect(@user_customer).to be_valid
+      end
+      it '建物名が空でも登録できること' do
         expect(@user_customer).to be_valid
       end
     end
