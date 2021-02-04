@@ -12,7 +12,6 @@ class UserCustomer
     validates :item_id
     validates :token
   end
-  # validates :tell
 
   def save
     customer = Customer.create(user_id: user_id, item_id: item_id)
