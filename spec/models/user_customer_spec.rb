@@ -14,6 +14,7 @@ RSpec.describe UserCustomer, type: :model do
         expect(@user_customer).to be_valid
       end
       it '建物名が空でも登録できること' do
+        @user_customer.building_number = nil
         expect(@user_customer).to be_valid
       end
     end
@@ -25,7 +26,7 @@ RSpec.describe UserCustomer, type: :model do
         expect(@user_customer.errors.full_messages).to include("Postal code can't be blank")
       end
       it  'postal_codeにハイフンがないと保存できないこと' do
-        @user_customer.postal_code = 1570077
+        @user_customer.postal_code = "1570077"
         @user_customer.valid?
         expect(@user_customer.errors.full_messages).to include("Postal code is invalid. Include hyphen(-)")
       end
@@ -42,17 +43,22 @@ RSpec.describe UserCustomer, type: :model do
       it  'tellが空だと保存できないこと' do
         @user_customer.tell = nil
         @user_customer.valid?
-        expect(@user_customer.errors.full_messages).to include("Tell can't be blank")
+        expect(@user_customer.errors.full_messages).to include("Tell can't be blank", "Tell only input number.Tell is too long (maximum is 11 characters) ")
       end
       it  'tellにハイフンがあると保存できないこと' do
         @user_customer.tell = "080-3709-5444"
         @user_customer.valid?
-        expect(@user_customer.errors.full_messages).to include("Tell Input only number")
+        expect(@user_customer.errors.full_messages).to include("Tell only input number.Tell is too long (maximum is 11 characters) ")
+      end
+      it 'tellが半角英数混合だと保存できないこと' do
+        @user_customer.tell = "1a"
+        @user_customer.valid?
+        expect(@user_customer.errors.full_messages).to include("Tell only input number.Tell is too long (maximum is 11 characters) ")
       end
       it  'tellが11行以上だと保存できないこと' do
         @user_customer.tell = "080123456789"
         @user_customer.valid?
-        expect(@user_customer.errors.full_messages).to include("Tell is too long (maximum is 11 characters)")
+        expect(@user_customer.errors.full_messages).to include("Tell only input number.Tell is too long (maximum is 11 characters) ")
       end
       it  'shipping_region_idが空だと保存できないこと' do
         @user_customer.shipping_region_id = nil

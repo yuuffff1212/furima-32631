@@ -2,6 +2,7 @@ FactoryBot.define do
   factory :user_customer do
     postal_code         {"157-0077"}
     city                {"東京"}
+    building_number     {"sibuya"}
     house_number        {"1-1"}
     tell                {"08045454444"}
     shipping_region_id  {1}
