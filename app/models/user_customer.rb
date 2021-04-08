@@ -4,7 +4,7 @@ class UserCustomer
 
   with_options presence:true do
     validates :postal_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)" }
-    validates :shipping_region_id, numericality: { other_than: 0 } 
+    validates :shipping_region_id, numericality: { other_than: 0 }
     validates :city
     validates :house_number
     validates :tell, format: { with: /\A[0-9]{11}\z/, message: "only input number.Tell is too long (maximum is 11 characters) " }
