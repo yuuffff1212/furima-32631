@@ -4,6 +4,7 @@
     <list default="true" id="bb549f07-7246-443b-85b0-57f872d622ab" name="デフォルト変更リスト" comment="">
 <<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/storage.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/storage.yml" afterDir="false" />
 =======
@@ -12,6 +13,8 @@
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,12 +43,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="AWS(S3)の導入" />
-                    <option name="lastUsedInstant" value="1617861237" />
+                    <option name="branchName" value="AWS(EC2)の導入" />
+                    <option name="lastUsedInstant" value="1617866592" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1617861236" />
+                    <option name="lastUsedInstant" value="1617864727" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="AWS(S3)の導入" />
+                    <option name="lastUsedInstant" value="1617861237" />
                   </RecentBranch>
                 </list>
               </option>
@@ -192,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617167858695</updated>
       <workItem from="1617167861302" duration="175000" />
-      <workItem from="1617168163697" duration="10558000" />
+      <workItem from="1617168163697" duration="12491000" />
     </task>
     <servers />
   </component>
