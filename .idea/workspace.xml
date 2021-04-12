@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bb549f07-7246-443b-85b0-57f872d622ab" name="デフォルト変更リスト" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/unicorn.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/unicorn.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +193,7 @@
       <workItem from="1617168163697" duration="12491000" />
       <workItem from="1617950872418" duration="68000" />
       <workItem from="1617950955570" duration="972000" />
-      <workItem from="1618197617382" duration="3372000" />
+      <workItem from="1618197617382" duration="4840000" />
     </task>
     <servers />
   </component>
